@@ -22,28 +22,10 @@ export class LoginComponent {
 
   createForm() {
     this.formGroup = this.formBuilder.group({
-      'username': ['', Validators.required],
-      'password': ['', Validators.required],
+      'username': ['user', Validators.required],
+      'password': ['password', Validators.required],
     });
   }
-
-
-//   getError(el) {
-//     switch (el) {
-//       case 'user':
-//         if (this.formGroup.get('username').hasError('required')) {
-//           return 'Username required';
-//         }
-//         break;
-//       case 'pass':
-//         if (this.formGroup.get('password').hasError('required')) {
-//           return 'Password required';
-//         }
-//         break;
-//       default:
-//         return '';
-//     }
-//   }
 
   onSubmit(post) {
     this.post = post;
@@ -51,6 +33,9 @@ export class LoginComponent {
     if( this.post['username'] === "user" ){
       console.log('hello');
       this.router.navigate(['/tables']);
+    }
+    else{
+        window.alert('Invalid User');
     }
 
 

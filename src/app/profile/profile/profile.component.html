@@ -1,1 +1,19 @@
-<p>profile works!</p>
+<div class="container">
+    <div class="delete">
+    <button  *ngIf="url" (click)="delete()">delete</button>
+</div>
+<div class="card">
+<label class="hoverable" for="fileInput">
+
+    <img [src]="url ? url : 'assets/profile.jpg'"> 
+    <div class="hover-text">
+      Choose file
+      <h4 class="success-message" *ngIf="url"> Uploaded Successfully </h4>
+      </div>
+    <div class="background"></div>
+  </label>
+
+  <br/>
+  <input id="fileInput" type='file' (change)="onSelectFile($event)">
+</div>
+</div>

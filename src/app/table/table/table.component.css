@@ -7,6 +7,11 @@ table {
     font-size: 14px;
     width: 100%;
   }
+  .profile{
+    margin-left: 48%;
+    background-color: #a20d0d;
+    color:white;
+  }
   
   form{
     padding-bottom: 30px;

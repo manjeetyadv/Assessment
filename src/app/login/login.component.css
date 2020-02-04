@@ -25,7 +25,11 @@
        /* .mat-form-field-underline{ */
 
 
-  
+  .icon{
+      cursor: pointer;
+      color: tomato;
+      font-size: initial;
+  }
   .form-element {
     padding: 5px 0px 25px 2px;
     width: 100%;

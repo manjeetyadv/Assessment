@@ -2,21 +2,39 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule } from '@angular/forms';
+import { TranslateModule } from '@ngx-translate/core';
+import 'hammerjs';
 import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
   MatRippleModule,
-  MatIconModule
+  MatIconModule,
+  MatDatepickerModule
 } from '@angular/material';
+import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TableComponent } from './table/table/table.component';
 import { ProfileComponent } from './profile/profile/profile.component';
-import { AppRoutingModule } from './app-routing.module';
 import { LoginComponent } from './login/login.component';
-import { RouterModule } from '@angular/router';
-import { MaterialModule } from './material.module';
-
+const appRoutes: Routes = [
+  {
+    
+    path: '',
+    loadChildren: './login/login.module#LoginModule',
+},
+  {
+    path: 'tables',
+    loadChildren: './table/table/table.module#TableModule',
+    
+  },
+  {
+    path: 'profile',
+    component:ProfileComponent
+    
+  },
+  
+];
 @NgModule({
 
 
@@ -24,19 +42,15 @@ import { MaterialModule } from './material.module';
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
-    AppRoutingModule,
     RouterModule,
-    MaterialModule
-  ],
-  declarations: [AppComponent,
-    TableComponent,
-    ProfileComponent, 
-    LoginComponent],
-  bootstrap: [AppComponent],
-  exports: [
+    RouterModule.forRoot(appRoutes),
 
-    MaterialModule
+    TranslateModule.forRoot(),
   ],
+  declarations: [AppComponent, ProfileComponent
+   ],
+  bootstrap: [AppComponent],
+
 
 })
 export class AppModule { }
