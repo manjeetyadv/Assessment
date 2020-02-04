@@ -1,19 +1,31 @@
-<div class="container">
-    <div class="delete">
-    <button  *ngIf="url" (click)="delete()">delete</button>
-</div>
-<div class="card">
-<label class="hoverable" for="fileInput">
+<h2 class="my-3"style="text-align: center;">My Profile Section </h2>
+<div class="container card">
+<form>
+    <label class="hoverable" for="fileInput">
+        <img [src]="url ? url : 'assets/profile.jpg'"> 
+        <div class="hover-text">
+          Choose file
+          <h4 class="success-message" *ngIf="url"> Uploaded Successfully </h4>
+        </div>
+        <div class="background"></div>
+      </label>
+    
+      <br/>
+      <input id="fileInput" type='file' (change)="onSelectFile($event)">
+      <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
+    <div class="form-group">
+  <b> Name:</b><br> <input class="form-control" value="Manjeet Yadav" placeholder="Enter Name" type="text">
+    </div>
+    <div class="form-group ">
 
-    <img [src]="url ? url : 'assets/profile.jpg'"> 
-    <div class="hover-text">
-      Choose file
-      <h4 class="success-message" *ngIf="url"> Uploaded Successfully </h4>
-      </div>
-    <div class="background"></div>
-  </label>
-
-  <br/>
-  <input id="fileInput" type='file' (change)="onSelectFile($event)">
+  <b> Mobile Number:</b><br> <input class="form-control" value="9716718367" placeholder="Enter Mobile Number"type="text">
+    </div>
+    <div class="form-group ">
+   <b>Email:</b><br> <input class="form-control" type="text" value="manjeet.yadv99@gmail.com"placeholder="Enter Email">
+    </div>
+    <div class="form-group ">
+  <b> Date of birth:</b><br> <input class="form-control" value="26/10/1997"placeholder="Enter DOB" type="text">
 </div>
+<button type="submit" class="btn btn-primary w-100 my-2">Update</button>
+ </form>
 </div>

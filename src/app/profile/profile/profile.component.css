@@ -9,7 +9,7 @@ p {
   }
   .hoverable{
     position: relative;
-    margin-top:2px;
+    margin-top: -15%;
     display: block;
     cursor: pointer;
     height: 200px;
@@ -25,6 +25,7 @@ p {
     transform: translate(-50%,-50%);   
     z-index: 2;
   }
+
   .hoverable .background{
     position: absolute;
 
@@ -48,6 +49,7 @@ p {
   #fileInput{
     display: none;
   }
+
   .card{
     text-align: -webkit-center;
     border: 2px solid black;

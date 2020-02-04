@@ -1,31 +1,30 @@
-.fill-remaining-space {
-    /* This fills the remaining space, by using flexbox. 
-       Every toolbar row uses a flexbox row layout. */
+/* .fill-remaining-space {
     flex: 1 1 auto;
-  }
+  } */
   
-  .container {
+  /* .container {
     padding: 10px;
     text-align: -webkit-center;
     padding: 70px 50px 50px 50px;
-  }
-  
+  } */
+  .card{
+    border: 2px solid black;
+    margin-top:36px;
+    border-top-left-radius: 15%;
+    border-bottom-right-radius: 15%;  }
   .form {
       width:365px;
     min-width: 100px;
     max-width: 500px;
-    border: 2px solid black
+    /* border: 2px solid black */
   }
   .mat-form-field-appearance-legacy{
-    width: 200px !important;
+    /* width: 200px !important;
     margin-left: 89px !important;
-    margin-right: 89px !important;
+    margin-right: 89px !important; */
 
   }
-       /* .mat-form-field-underline{ */
-
-
-  .icon{
+    .icon{
       cursor: pointer;
       color: tomato;
       font-size: initial;
@@ -33,11 +32,27 @@
   .form-element {
     padding: 5px 0px 25px 2px;
     width: 100%;
-    text-align: center;
+    /* text-align: center; */
 
+  }
+  .border{
+    width: 110px;
+    float: left;
+    height: 2px;
+    margin-top: auto;
+    background: #1f1f16;
   }
   .mat-form-filed{
       text-align: center;
+  }
+  .profile{
+text-align: center;
+  }
+  .image{
+    width:300px;
+  }
+  .log{
+margin-top: auto;
   }
   
   .button {
