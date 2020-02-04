@@ -1,40 +1,34 @@
 <form class="date-block" [formGroup]="filterForm">
-	<div class="date-block__list">
+  <div class="date-block__list">
     <mat-form-field>
-      <input matInput 
-        [matDatepicker]="fromDate" 
-        placeholder="From Date" 
-        formControlName="fromDate">
+      <input matInput [matDatepicker]="fromDate" placeholder="From Date" formControlName="fromDate">
       <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
       <mat-datepicker #fromDate></mat-datepicker>
     </mat-form-field>
   </div>
-  	<div class="date-block__list">
+  <div class="date-block__list">
     <mat-form-field>
-      <input matInput 
-        [matDatepicker]="toDate" 
-        placeholder="To Date" 
-        formControlName="toDate">
+      <input matInput [matDatepicker]="toDate" placeholder="To Date" formControlName="toDate">
       <mat-datepicker-toggle matSuffix [for]="toDate"></mat-datepicker-toggle>
       <mat-datepicker #toDate></mat-datepicker>
     </mat-form-field>
   </div>
-   <button mat-button color="primary" class="submit" (click)="applyFilter()">Submit</button>
+  <button mat-button color="primary" class="submit" (click)="applyFilter()">Submit</button>
 
-   <button mat-button color="primary" class="profile"  [routerLink]="['/profile']">Change Profile</button> &nbsp;
-   <button mat-button color="primary" class="login"  [routerLink]="['']">Login</button> 
+  <button mat-button color="primary" class="profile" [routerLink]="['/profile']">Change Profile</button> &nbsp;
+  <button mat-button color="primary" class="login" [routerLink]="['']">Login</button>
 
-   
+
 
 </form>
-<h2 style="text-align: center;">Employee Table</h2>
+<h2 class="heading">Employee Table</h2>
 
-<mat-table #table  [dataSource]="dataSource" class="mat-elevation-z8">
+<mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">
 
   <!-- Position Column -->
   <ng-container matColumnDef="position">
     <mat-header-cell *matHeaderCellDef> No. </mat-header-cell>
-    <mat-cell  *matCellDef="let element"> {{element.position}} </mat-cell>
+    <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
   </ng-container>
 
   <!-- Name Column -->
@@ -45,24 +39,22 @@
 
   <!-- Weight Column -->
   <ng-container matColumnDef="salary">
-    <mat-header-cell  *matHeaderCellDef> Salary </mat-header-cell>
-    <mat-cell  *matCellDef="let element"> {{element.salary}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef> Salary </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
   </ng-container>
 
   <!-- Symbol Column -->
   <ng-container matColumnDef="joiningDate">
-    <mat-header-cell  *matHeaderCellDef> Joining Date  </mat-header-cell>
-    <mat-cell  *matCellDef="let element"> {{element.joiningDate |date: 'dd/MM/yyyy'}} </mat-cell>
+    <mat-header-cell *matHeaderCellDef> Joining Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.joiningDate |date: 'dd/MM/yyyy'}} </mat-cell>
   </ng-container>
 
-   <!--Founded Column -->
+  <!--Founded Column -->
   <ng-container matColumnDef="lastWorkingDate">
-    <mat-header-cell  *matHeaderCellDef> Last Working Date </mat-header-cell>
-    <mat-cell  *matCellDef="let element"> {{element.lastWorkingDate |date: 'dd/MM/yyyy'}} </mat-cell>
-  </ng-container> 
+    <mat-header-cell *matHeaderCellDef> Last Working Date </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.lastWorkingDate |date: 'dd/MM/yyyy'}} </mat-cell>
+  </ng-container>
 
   <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
   <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
 </mat-table>
-
-

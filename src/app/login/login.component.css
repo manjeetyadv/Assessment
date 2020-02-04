@@ -24,6 +24,10 @@
     margin-right: 89px !important; */
 
   }
+  .heading{
+    font-weight: bold; 
+    margin-top: 9px;
+  }
     .icon{
       cursor: pointer;
       color: tomato;

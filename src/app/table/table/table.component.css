@@ -12,13 +12,15 @@ table {
     background-color:orange !important;
     color:black;
     font-weight: bold;
-
   }
   .profile{
     margin-left: 40%;
     background-color: #a20d0d;
     color:white;
     height:41px;
+  }
+  heading{
+    text-align: center;
   }
   .login{
     background-color:blueviolet;

@@ -42,6 +42,9 @@ p {
   .hoverable:hover .hover-text{
     display: block;
   }
+  .heading{
+    text-align: center;
+  }
   .hoverable:hover .background{
     display: block;
   }

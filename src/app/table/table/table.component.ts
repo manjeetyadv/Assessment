@@ -3,7 +3,6 @@ import { MatTableDataSource } from '@angular/material';
 import { DatePipe } from '@angular/common';
 import {FormControl, FormGroup} from '@angular/forms';
 import * as moment from 'moment';
-import { SelectionModel } from '@angular/cdk/collections';
 export interface EmployeeTable {
   name: string;
   position: number;
@@ -30,8 +29,6 @@ const ELEMENT_DATA: EmployeeTable[] = [
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  selection = new SelectionModel<string>(true, []);
-dos:any;
   ngOnInit() {
 
   }
