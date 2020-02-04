@@ -1,5 +1,6 @@
+<!--Form-->
 <form class="date-block" [formGroup]="filterForm">
-  <div class="date-block__list">
+  <div class="date-block__list" style="margin-left: auto;">
     <mat-form-field>
       <input matInput [matDatepicker]="fromDate" placeholder="From Date" formControlName="fromDate">
       <mat-datepicker-toggle matSuffix [for]="fromDate"></mat-datepicker-toggle>
@@ -13,14 +14,14 @@
       <mat-datepicker #toDate></mat-datepicker>
     </mat-form-field>
   </div>
-  <button mat-button color="primary" class="submit" (click)="applyFilter()">Submit</button>
+  <button mat-button  class="submit" (click)="applyFilter()">Submit</button>
 
   <button mat-button color="primary" class="profile" [routerLink]="['/profile']">Change Profile</button> &nbsp;
   <button mat-button color="primary" class="login" [routerLink]="['']">Login</button>
 
-
-
 </form>
+<!--/Form-->
+
 <h2 class="heading">Employee Table</h2>
 
 <mat-table #table [dataSource]="dataSource" class="mat-elevation-z8">

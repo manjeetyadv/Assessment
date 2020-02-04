@@ -36,17 +36,18 @@ profileRoutes.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-profileRoutes.route('/update').post(function (req, res) {
-  profilemodel.find(function(err, profilemodel) {
+profileRoutes.route('/update').put(function (req, res) {
+  let id = '5e39ae67c28ffc2f7c4007d3';
+  profilemodel.findById(id,function(err, profiles) {
     if (!profilemodel)
       res.status(404).send("Record not found");
     else {
-      profilemodel.profileName= req.body.profileName;
-      profilemodel.profileMobile = req.body.profileMobile;
-      profilemodel.profileEmail = req.body.profileEmail;
-      profilemodel.profileDob=req.body.profileDob
-
-      profilemodel.save().then(profilemodel => {
+      var user = new profilemodel(req.body)
+      profilemodel.name= req.body.name;
+      profilemodel.mobile = req.body.mobile;
+      profilemodel.email = req.body.email;
+      profilemodel.dob= req.body.dob
+      user.save().then(profilemodel => {
           res.json('Update complete');
       })
       .catch(err => {
@@ -56,12 +57,5 @@ profileRoutes.route('/update').post(function (req, res) {
   });
 });
 
-// Defined delete | remove | destroy route
-profileRoutes.route('/delete/:id').get(function (req, res) {
-    profilemodel.findByIdAndRemove({_id: req.params.id}, function(err, profile){
-        if(err) res.json(err);
-        else res.json('Successfully removed');
-    });
-});
 
 module.exports = profileRoutes;

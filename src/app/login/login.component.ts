@@ -14,31 +14,31 @@ export class LoginComponent {
   password:string;
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
-  ngOnInit() {
+  ngOnInit() 
+  {
     this.createForm();
-
-
   }
 
-  createForm() {
+  createForm() 
+  {
     this.formGroup = this.formBuilder.group({
-      'username': ['user', Validators.required],
-      'password': ['password', Validators.required],
+      'username': ['', Validators.required],
+      'password': ['', Validators.required],
     });
   }
 
-  onSubmit(post) {
+  onSubmit(post)
+   {
     this.post = post;
     console.log(post);
-    if( this.post['username'] === "user" ){
-      console.log('hello');
+    if( this.post['username'] === "user" && this.post['password'] === "password" )
+    {
       this.router.navigate(['/tables']);
     }
-    else{
+    else
+    {
         window.alert('Invalid User');
     }
-
-
   }
 
   hide = true;

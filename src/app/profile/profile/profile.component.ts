@@ -10,16 +10,15 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class ProfileComponent implements OnInit {
   profileForm: FormGroup;
+  url = '';
+  profile: profile[];
+  profileDetail: any;
 
-    url = '';
-    profile: profile[];
-profileDetail:any;
-
-  constructor(private profileService: profileService, private _formBuilder: FormBuilder) { 
+  constructor(private profileService: profileService, private _formBuilder: FormBuilder) {
     this.profileService.getProfile().subscribe((data: profile[]) => {
       this.profile = data;
       this.profileForm.patchValue({
-        name : data[0]['name'],
+        name: data[0]['name'],
         mobile: data[0]['mobile'],
         email: data[0]['email'],
         dob: data[0]['dob']
@@ -30,23 +29,22 @@ profileDetail:any;
 
   ngOnInit() {
     this.createForm();
-
-
   }
   /**
-    * Create Training Partner form
+    * Create Profile form
     *
     * @returns {void}
     */
-   createForm(): void {
+  createForm(): void {
     this.profileForm = this._formBuilder.group({
-        name: ['', [Validators.required]],
-        mobile: ['', [Validators.required]],
-        email: ['', [Validators.required]],
-        dob: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      mobile: ['', [Validators.required]],
+      email: ['', [Validators.required]],
+      dob: ['', [Validators.required]],
     });
-}
-    onSelectFile(event) {
+  }
+  // Select Image
+  onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
 
@@ -57,14 +55,14 @@ profileDetail:any;
       }
     }
   }
-  public delete(){
-    this.url = null;
-  }
-  update():void{   
+
+
+  //Update Profile
+  update(): void {
     console.log(this.profileForm.value)
     this.profileService.updateProfile(this.profileForm.value).subscribe(
-      res=>{
-        console.log('res',res)
+      res => {
+        console.log('res', res)
       }
     )
 

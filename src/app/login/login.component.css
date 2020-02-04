@@ -1,12 +1,4 @@
-/* .fill-remaining-space {
-    flex: 1 1 auto;
-  } */
-  
-  /* .container {
-    padding: 10px;
-    text-align: -webkit-center;
-    padding: 70px 50px 50px 50px;
-  } */
+
   .card{
     border: 2px solid black;
     margin-top:36px;
@@ -18,12 +10,11 @@
     max-width: 500px;
     /* border: 2px solid black */
   }
-  .mat-form-field-appearance-legacy{
-    /* width: 200px !important;
+  /* .mat-form-field-appearance-legacy{
+    width: 200px !important;
     margin-left: 89px !important;
-    margin-right: 89px !important; */
-
-  }
+    margin-right: 89px !important;
+  } */
   .heading{
     font-weight: bold; 
     margin-top: 9px;
@@ -36,7 +27,6 @@
   .form-element {
     padding: 5px 0px 25px 2px;
     width: 100%;
-    /* text-align: center; */
 
   }
   .border{

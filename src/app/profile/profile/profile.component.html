@@ -1,30 +1,40 @@
 <h2 class="my-3 heading">My Profile Section </h2>
 <div class="container card">
-<form [formGroup]="profileForm">
-    <label class="hoverable" for="fileInput">
-        <img [src]="url ? url : 'assets/profile.jpg'"> 
-        <div class="hover-text">
-          Choose file
-          <h4 class="success-message" *ngIf="url"> Uploaded Successfully </h4>
-        </div>
-        <div class="background"></div>
-      </label>
-    
-      <br/>
-      <input id="fileInput" type='file' (change)="onSelectFile($event)">
-    <div class="form-group">
-    <b> Name:</b><br> <input class="form-control" formControlName="name"   type="text">
-    </div>
-    <div class="form-group ">
+  <!--Form-->
+  <form [formGroup]="profileForm">
 
-  <b> Mobile Number:</b><br> <input class="form-control"   formControlName="mobile" placeholder="Enter Mobile Number"type="text">
+    <label class="hoverable" for="fileInput">
+      <img [src]="url ? url : 'assets/profile.jpg'">
+      <div class="hover-text">
+        Choose file
+        <h4 class="success-message" *ngIf="url"> Uploaded Successfully </h4>
+      </div>
+      <div class="background"></div>
+    </label>
+
+    <br/>
+
+    <input id="fileInput" type='file' (change)="onSelectFile($event)">
+
+    <div class="form-group">
+      <b> Name:</b><br> <input class="form-control" formControlName="name" type="text">
     </div>
+
     <div class="form-group ">
-   <b>Email:</b><br> <input class="form-control"  formControlName="email" type="text"  placeholder="Enter Email">
+      <b> Mobile Number:</b><br> <input class="form-control" formControlName="mobile" placeholder="Enter Mobile Number"
+        type="text">
     </div>
+
     <div class="form-group ">
-  <b> Date of birth:</b><br> <input class="form-control"  formControlName="dob"  placeholder="Enter DOB" type="text">
-</div>
-<button type="submit" (click)="update()" class="btn btn-primary w-100 my-2">Update</button>
- </form>
+      <b>Email:</b><br> <input class="form-control" formControlName="email" type="text" placeholder="Enter Email">
+    </div>
+
+    <div class="form-group ">
+      <b> Date of birth:</b><br> <input class="form-control" formControlName="dob" placeholder="Enter DOB" type="text">
+    </div>
+
+    <button type="submit" (click)="update()" class="btn btn-primary w-100 my-2">Update</button>
+    
+  </form>
+  <!-- /Form-->
 </div>
