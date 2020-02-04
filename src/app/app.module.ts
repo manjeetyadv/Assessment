@@ -4,19 +4,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { TranslateModule } from '@ngx-translate/core';
 import 'hammerjs';
-import {
-  MatButtonModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatRippleModule,
-  MatIconModule,
-  MatDatepickerModule
-} from '@angular/material';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TableComponent } from './table/table/table.component';
 import { ProfileComponent } from './profile/profile/profile.component';
-import { LoginComponent } from './login/login.component';
+import { profileService } from './profile/profile/profile.service';
+import { HttpClientModule } from '@angular/common/http';
+
 const appRoutes: Routes = [
   {
     
@@ -44,12 +37,14 @@ const appRoutes: Routes = [
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
 
     TranslateModule.forRoot(),
   ],
   declarations: [AppComponent, ProfileComponent
    ],
+   providers:[profileService],
   bootstrap: [AppComponent],
 
 

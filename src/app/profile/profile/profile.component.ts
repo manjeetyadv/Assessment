@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { profileService } from './profile.service';
+import profile from './profile';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'profile-image',
@@ -6,14 +9,43 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+  profileForm: FormGroup;
 
     url = '';
+    profile: profile[];
+profileDetail:any;
 
-  constructor() { }
+  constructor(private profileService: profileService, private _formBuilder: FormBuilder) { 
+    this.profileService.getProfile().subscribe((data: profile[]) => {
+      this.profile = data;
+      this.profileForm.patchValue({
+        name : data[0]['name'],
+        mobile: data[0]['mobile'],
+        email: data[0]['email'],
+        dob: data[0]['dob']
+      })
+    });
 
-  ngOnInit() {
   }
 
+  ngOnInit() {
+    this.createForm();
+
+
+  }
+  /**
+    * Create Training Partner form
+    *
+    * @returns {void}
+    */
+   createForm(): void {
+    this.profileForm = this._formBuilder.group({
+        name: ['', [Validators.required]],
+        mobile: ['', [Validators.required]],
+        email: ['', [Validators.required]],
+        dob: ['', [Validators.required]],
+    });
+}
     onSelectFile(event) {
     if (event.target.files && event.target.files[0]) {
       var reader = new FileReader();
@@ -27,6 +59,15 @@ export class ProfileComponent implements OnInit {
   }
   public delete(){
     this.url = null;
+  }
+  update():void{   
+    console.log(this.profileForm.value)
+    this.profileService.updateProfile(this.profileForm.value).subscribe(
+      res=>{
+        console.log('res',res)
+      }
+    )
+
   }
 
 }

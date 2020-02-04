@@ -1,6 +1,6 @@
 <h2 class="my-3 heading">My Profile Section </h2>
 <div class="container card">
-<form>
+<form [formGroup]="profileForm">
     <label class="hoverable" for="fileInput">
         <img [src]="url ? url : 'assets/profile.jpg'"> 
         <div class="hover-text">
@@ -12,20 +12,19 @@
     
       <br/>
       <input id="fileInput" type='file' (change)="onSelectFile($event)">
-      <!-- <button *ngIf="url" (click)="delete()">delete</button> -->
     <div class="form-group">
-  <b> Name:</b><br> <input class="form-control" value="Manjeet Yadav" placeholder="Enter Name" type="text">
+    <b> Name:</b><br> <input class="form-control" formControlName="name"   type="text">
     </div>
     <div class="form-group ">
 
-  <b> Mobile Number:</b><br> <input class="form-control" value="9716718367" placeholder="Enter Mobile Number"type="text">
+  <b> Mobile Number:</b><br> <input class="form-control"   formControlName="mobile" placeholder="Enter Mobile Number"type="text">
     </div>
     <div class="form-group ">
-   <b>Email:</b><br> <input class="form-control" type="text" value="manjeet.yadv99@gmail.com"placeholder="Enter Email">
+   <b>Email:</b><br> <input class="form-control"  formControlName="email" type="text"  placeholder="Enter Email">
     </div>
     <div class="form-group ">
-  <b> Date of birth:</b><br> <input class="form-control" value="26/10/1997"placeholder="Enter DOB" type="text">
+  <b> Date of birth:</b><br> <input class="form-control"  formControlName="dob"  placeholder="Enter DOB" type="text">
 </div>
-<button type="submit" class="btn btn-primary w-100 my-2">Update</button>
+<button type="submit" (click)="update()" class="btn btn-primary w-100 my-2">Update</button>
  </form>
 </div>
