@@ -36,18 +36,18 @@ profileRoutes.route('/edit/:id').get(function (req, res) {
 });
 
 //  Defined update route
-profileRoutes.route('/update').put(function (req, res) {
-  let id = '5e39ae67c28ffc2f7c4007d3';
-  profilemodel.findById(id,function(err, profiles) {
+profileRoutes.route('/update/:id').put(function (req, res) {
+  let id = req.params.id;
+  profilemodel.findById(id,function(err, profilemodel) {
     if (!profilemodel)
       res.status(404).send("Record not found");
     else {
-      var user = new profilemodel(req.body)
+      // var user = new profilemodel(req.body)
       profilemodel.name= req.body.name;
       profilemodel.mobile = req.body.mobile;
       profilemodel.email = req.body.email;
       profilemodel.dob= req.body.dob
-      user.save().then(profilemodel => {
+      profilemodel.save().then(profilemodel => {
           res.json('Update complete');
       })
       .catch(err => {

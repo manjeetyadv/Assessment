@@ -44,13 +44,13 @@
     <mat-cell *matCellDef="let element"> {{element.salary}} </mat-cell>
   </ng-container>
 
-  <!-- Symbol Column -->
+  <!-- Joining Column -->
   <ng-container matColumnDef="joiningDate">
     <mat-header-cell *matHeaderCellDef> Joining Date </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.joiningDate |date: 'dd/MM/yyyy'}} </mat-cell>
   </ng-container>
 
-  <!--Founded Column -->
+  <!--LwD Column -->
   <ng-container matColumnDef="lastWorkingDate">
     <mat-header-cell *matHeaderCellDef> Last Working Date </mat-header-cell>
     <mat-cell *matCellDef="let element"> {{element.lastWorkingDate |date: 'dd/MM/yyyy'}} </mat-cell>

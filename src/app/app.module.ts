@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
-import { TranslateModule } from '@ngx-translate/core';
 import 'hammerjs';
 import { RouterModule, Routes } from '@angular/router';
 import { AppComponent } from './app.component';
@@ -39,8 +38,6 @@ const appRoutes: Routes = [
     RouterModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-
-    TranslateModule.forRoot(),
   ],
   declarations: [AppComponent, ProfileComponent
    ],

@@ -17,7 +17,7 @@ const ELEMENT_DATA: EmployeeTable[] = [
   { position: 3, name: 'Aakash', salary: 60000, joiningDate: new Date(1993, 6, 12), lastWorkingDate: new Date(1999, 12, 15) },
   { position: 4, name: 'Gagan', salary: 90000, joiningDate: new Date(2001, 7, 6), lastWorkingDate: new Date(2011, 10, 6) },
   { position: 5, name: 'Manjeet', salary: 100000, joiningDate: new Date(2020, 5, 9), lastWorkingDate: new Date(2020, 5, 9) },
-  { position: 6, name: 'Abhinev', salary: 500000, joiningDate: new Date(2008, 7, 14), lastWorkingDate: new Date(2008, 7, 14) },
+  { position: 6, name: 'Abhinav', salary: 500000, joiningDate: new Date(2008, 7, 14), lastWorkingDate: new Date(2008, 7, 14) },
   { position: 7, name: 'Lalit', salary: 600000, joiningDate: new Date(1998, 11, 18), lastWorkingDate: new Date(1998, 11, 18) },
   { position: 8, name: 'Krishna', salary: 7000000, joiningDate: new Date(2002, 2, 24), lastWorkingDate: new Date(2002, 2, 24) },
   { position: 9, name: 'Bunty', salary: 600000, joiningDate: new Date(2006, 4, 29), lastWorkingDate: new Date(2006, 4, 29) },
